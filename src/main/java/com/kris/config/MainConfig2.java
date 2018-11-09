@@ -3,6 +3,7 @@ package com.kris.config;
 import com.kris.bean.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
@@ -21,8 +22,13 @@ public class MainConfig2 {
          request:同一次请求创建一个实例
          session:同一个session创建一个实例
      */
-    @Scope()
+    //@Scope()
+    /*
+        懒加载：用到才加载
+     */
+    @Lazy
     public Person person(){
+        System.out.println("创建对象");
         return new Person("李四",25);
     }
 }
