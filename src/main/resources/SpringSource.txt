@@ -1,0 +1,17 @@
+spring记录
+1.Spring容器在启动你的时候会保存所有注册进来的bean的定义信息
+    1.xml注册bean<bean>
+    2.注解注册bean：@service,@component,@bean,xxx
+2.spring容器会在适当的时机创建这些bean
+    1.用到这个bean的时候，利用getBean创建bean，创建好以后保存在容器中
+    2.统一创建剩下所有的bean的时候，finishBeanFactoeyInitialization()
+3.后置处理器：
+    1.每一个bean创建完成都会使用各种后置处理器进行处理，来增强bean的功能
+        例如：AutowiredAnnotationBeanPostProcess:处理自动注入
+4.srping事件驱动模型
+    ApplicationListener:事件监听
+    ApplicationEvrnMulticaster:事件派发
+
+
+
+
