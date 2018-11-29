@@ -32,6 +32,15 @@ import org.springframework.context.annotation.Configuration;
  *           context.publishEvent
     原理：
         ContextRefreshedEvent、IocTest_Ext$1、ContextClosedEvent
+        1)ContextRefreshedEvent
+            1.容器创建对象：refresh()
+            2.finishRefresh(),容器创新完成
+            发布流程
+            3.publishEvent(new ContextRefreshedEvent(this))
+                1.获取事件多播器(派发器),getApplicationEventMulticaster()
+                2.multicastEvent派发事件
+                3.获取到所有的applicationListener
+
 
  */
 @ComponentScan("com.kris.ext")
